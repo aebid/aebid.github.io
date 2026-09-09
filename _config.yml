@@ -1,5 +1,5 @@
 # Site settings
-title: Devin Acosta Ebi
+title: Devin Aebi
 description: Personal website
 # Shown as the site's base URL. For a user site (user.github.io) leave baseurl empty.
 baseurl: ""
@@ -14,7 +14,7 @@ show_downloads: false
 
 # Author / contact details used by the nav and footer
 author:
-  name: Devin Acosta Ebi
+  name: Devin Aebi
   email: aebid3@gmail.com
   github: aebid
   # orcid:

@@ -5,7 +5,7 @@ description: Physicist — put a one-line tagline here.
 ---
 
 <!-- Drop a photo at assets/img/profile.jpg to enable this:
-<img class="profile-photo" src="{{ '/assets/img/profile.jpg' | relative_url }}" alt="Devin Acosta Ebi">
+<img class="profile-photo" src="{{ '/assets/img/profile.jpg' | relative_url }}" alt="Devin Aebi">
 -->
 
 # Hello
