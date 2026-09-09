@@ -1,0 +1,75 @@
+---
+# Front matter (even empty) is required so Jekyll processes this file.
+---
+
+@import "{{ site.theme }}";
+
+/* ---- Additions on top of the Slate theme ---- */
+
+.site-nav {
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #eff0f1;
+}
+
+.site-nav a {
+  display: inline-block;
+  margin-right: 1.25rem;
+  font-weight: 500;
+  color: #1e6bb8;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
+
+.site-nav a.current {
+  color: #159957;
+  font-weight: 700;
+}
+
+.post-meta {
+  margin-top: -0.5rem;
+  color: #819198;
+  font-size: 0.9rem;
+}
+
+.post-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.post-list li {
+  margin-bottom: 1rem;
+}
+
+.post-list .post-date {
+  display: block;
+  color: #819198;
+  font-size: 0.85rem;
+}
+
+.site-footer {
+  color: #819198;
+  font-size: 0.9rem;
+}
+
+.site-footer .copyright {
+  font-size: 0.8rem;
+}
+
+.profile-photo {
+  float: right;
+  width: 180px;
+  margin: 0 0 1rem 1.5rem;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 42em) {
+  .profile-photo {
+    float: none;
+    display: block;
+    margin: 0 auto 1.5rem;
+  }
+}

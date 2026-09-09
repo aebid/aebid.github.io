@@ -1,0 +1,49 @@
+# Site settings
+title: Devin Acosta Ebi
+description: Personal website
+# Shown as the site's base URL. For a user site (user.github.io) leave baseurl empty.
+baseurl: ""
+url: "https://aebid.github.io"
+
+# Theme (an official GitHub Pages theme, no plugin allowlist issues)
+theme: jekyll-theme-slate
+
+# Slate theme options
+show_downloads: false
+# google_analytics: UA-XXXXXXXX-X
+
+# Author / contact details used by the nav and footer
+author:
+  name: Devin Acosta Ebi
+  email: aebid3@gmail.com
+  github: aebid
+  # orcid:
+  # linkedin:
+  # inspire:
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Build settings
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - .jekyll-cache
+
+# Every page/post gets the nav-wrapped layout by default
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

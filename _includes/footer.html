@@ -1,0 +1,10 @@
+<hr>
+<footer class="site-footer">
+  <p>
+    {% if site.author.email %}<a href="mailto:{{ site.author.email }}">Email</a>{% endif %}
+    {% if site.author.github %} &middot; <a href="https://github.com/{{ site.author.github }}">GitHub</a>{% endif %}
+    {% if site.author.orcid %} &middot; <a href="https://orcid.org/{{ site.author.orcid }}">ORCID</a>{% endif %}
+    {% if site.author.linkedin %} &middot; <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a>{% endif %}
+  </p>
+  <p class="copyright">&copy; {{ site.time | date: "%Y" }} {{ site.author.name | default: site.title }}</p>
+</footer>

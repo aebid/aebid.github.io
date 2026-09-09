@@ -1,0 +1,7 @@
+<nav class="site-nav">
+  {% assign nav_pages = site.pages | where_exp: "p", "p.nav_order" | sort: "nav_order" %}
+  {% for p in nav_pages %}
+    {% assign target = p.url | relative_url %}
+    <a href="{{ target }}"{% if page.url == p.url %} class="current"{% endif %}>{{ p.title }}</a>
+  {% endfor %}
+</nav>
