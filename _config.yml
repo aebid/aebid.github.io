@@ -1,6 +1,6 @@
 # Site settings
 title: Devin Aebi
-description: Personal website
+description: Physicist
 # Shown as the site's base URL. For a user site (user.github.io) leave baseurl empty.
 baseurl: ""
 url: "https://aebid.github.io"
@@ -15,10 +15,10 @@ show_downloads: false
 # Author / contact details used by the nav and footer
 author:
   name: Devin Aebi
-  email: aebid3@gmail.com
+  email: devin.aebi@proton.me
   github: aebid
   # orcid:
-  # linkedin:
+  linkedin: devin-aebi
   # inspire:
 
 # Markdown
