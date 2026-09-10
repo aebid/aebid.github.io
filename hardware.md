@@ -6,7 +6,12 @@ permalink: /service/
 
 # CMS Service Work
 
-What is CMS Service work.
+Every member of the CMS collaboration is required to do some amount of service work to keep the experiment working smoothly.
+While other disciplines of physics have a small experiment in their lab, we share one among thousands of researchers all at once.
+CMS service work can range from physically being at CERN to purely helping with the CMS Software (CMSSW).
+These are generally projects that are not a physics analysis, but more detector work.
+My main service projects have been the GEM Subsystem Alignment, and the GEM-CSC Integrated Trigger.
+I have also worked on the ME0 project and served as a CSC Detector On Call (DOC).
 
 ## Projects
 
