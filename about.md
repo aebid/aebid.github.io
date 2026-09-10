@@ -24,3 +24,4 @@ When I am not at work I can be found snowboarding, hiking, crocheting, practicin
 ## Experience
 
 - **Research Assistant** - Texas A&M University, 2018-Present
+- **Research Assistant** - CERN, 2022-2026
