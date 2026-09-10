@@ -16,73 +16,40 @@ What it is, why it matters, and your contribution.
 
 ### GEM-CSC Integrated Trigger
 
-{% comment %}
-  Structure below: what it is -> why it was needed -> how it works ->
-  what I did -> where it stands. Fill the [brackets] and delete these
-  comments as you go.
-
-  Everything unbracketed is scaffolding I drafted from public CMS
-  context and your resume. Check it before publishing - I am not the
-  authority on your subsystem.
-{% endcomment %}
-
-The GEM-CSC integrated trigger combines hits from the new GEM detectors with
-segments from the CSCs to build a single, better muon trigger object in the
-CMS endcap.
+The GEM-CSC Integrated Trigger is the combination of hits from the new GEM detectors with the segments from the CSC detectors to build a single better trigger object in the CMS endcap.
 
 **Why it was needed.**
-{% comment %}
-  The reader here is a physicist outside your subsystem, or a hiring
-  committee. Two or three sentences, no jargon that you have not unpacked.
-  Worth covering: the endcap rate problem, and what happens to a
-  single-detector trigger as luminosity climbs.
-{% endcomment %}
-[Why the CSC-only endcap muon trigger runs out of room at high luminosity, and
-what that costs you in threshold or rate.]
+
+The LHC provides collisions at 40 MHz, or 1 per 25 nanoseconds.
+If every collision was saved we would run out of disk space very quickly, so a trigger system is implemented to decide what data to save and what to ignore.
+This system works on quickly and coarsely reconstructing the event to see if anything interesting exists.
+With the upgrades to the LHC to increase luminosity, all experiments are preparing for the High-Luminosity LHC (HL-LHC).
+In this new chapter with increased collision rates, the current existing trigger system would become unmanageable.
+The addition of the GEM subsystem to CMS has been an upgrade designed to help attack this incoming problem.
 
 **How it works.**
-{% comment %}
-  The mechanism, in plain language. The lever-arm/bending-angle story is
-  the intuitive core - a reader who takes away only one idea should take
-  away that one.
-{% endcomment %}
-GE1/1 sits directly in front of ME1/1 in the endcap. Because the two detectors
-are separated, pairing a GEM hit with a CSC segment gives a much longer lever
-arm than the CSC alone, which sharpens the bending-angle measurement and so the
-momentum assigned to the muon at Level 1. [Add what that buys concretely - rate
-reduction at fixed efficiency, a lower threshold, efficiency recovery when CSC
-layers underperform. Numbers if they are public.]
 
-The combined stubs are built in the [OTMB firmware / where exactly], which ties
-into the CSC Optical Trigger Motherboard work in the section [above/below].
-{% comment %} Cross-link this to your OTMB work - it is the same hardware path. {% endcomment %}
+Current Level 1 muon triggering is mostly driven by a p<sub>T</sub> measurement of the trigger objects.
+This is done in the endcap of CMS by taking measured points over the 4 CSC stations and building a track.
+Measuring the curvature of this track allows us to calculate the momentum of the muon as it bends through the magnetic field.
+To get a more accurate p<sub>T</sub> measurement, we would need more data points in the track, and an important one would be measuring the angle of the hit on a chamber instead of only the position.
+CSCs alone do not have a good enough resolution to measure the angle of the track accurately for use in the Level 1 trigger.
+GEMs are installed on the first station, GE1/1, and sit directly in front of the existing CSCs, ME1/1.
+By being placed a short distance away, this effectively makes the CSC system larger and can measure the angle of the track in this combined system, giving a more refined measurement for the eventual p<sub>T</sub> calculation.
+To achieve this the two subsystems must be coordinated very carefully.
 
 **My role.**
-{% comment %}
-  The most important block on the page, and the one only you can write.
-  Be concrete and take credit. "Led integration and coordination" is a
-  real leadership claim - show the scale that backs it.
-{% endcomment %}
-I led integration and coordination for the GEM-CSC integrated trigger,
-coordinating a team of graduate students, post-docs, and research scientists
-across [N] institutes. I also served as Level 3 Trigger Contact in the GEM
-Detector Performance Group, the lead contact for trigger issues in the GEM-CSC
-subsystem.
 
-[What did *you* personally build, debug, or decide? One or two specifics beat
-any amount of title. Good candidates: what was broken when you took it over,
-the hardest bug, what you had to get working before a data-taking milestone.]
+I produced the first analysis of the successfully working integrated GEM-CSC system.
+Using data taken from CMS Run 3 proton-proton collisions I produced an offline analysis showing the effect of using the combined system compared to the previous CSC alone system.
+My work showed with very simple integration, the trigger rate could be reduced by roughly a factor of 2 while maintaining the same signal efficiency.
+For this work I was awarded a 2025 CMS Award.
 
 **Where it stands.**
-[Commissioned and running in Run 3 since [date]? What is left for Phase-2 /
-HL-LHC? What are you handing to whoever takes over?]
+
+Now I manage a team of Ph.D. students working on the CSC Optical Trigger Motherboard putting these algorithms into real firmware and validating the firmware to software agreement.
+Open issues involve appropriate timing and spatial alignments between the two systems, correct conversions between different strip topologies, and appropriate matching latency to avoid causing issues downstream.
 
 **References.**
-{% comment %}
-  You produced several public detector notes - link them. Public CMS
-  results are citable and they make this page far more credible than
-  prose alone. CMS DP notes live under cms-results.web.cern.ch.
-{% endcomment %}
-- [CMS DP-20XX/XXX, "Title"](https://cms-results.web.cern.ch/cms-results/public-results/detector-performance/)
-- [Talk or poster, conference, year]
-
+- [CMS DP-2025/069, "Early Look at GEM-CSC Bending Angle Integration into the Level 1 Trigger"](https://gem-dpg-public-results.docs.cern.ch/results/cms-dp-2025-069.html)
+- [2025 CMS Awards](https://cms.cern/index.php/news/cms-awards-2025)
