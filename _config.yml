@@ -20,8 +20,8 @@ author:
   # orcid:
   linkedin: devin-aebi
   # inspire:
-  # Path to the CV/resume PDF. Comment this out to hide the CV link everywhere.
-  cv: /assets/pdf/devin-aebi-cv.pdf
+  # Path to the resume PDF. Comment this out to hide the resume link everywhere.
+  resume: /assets/pdf/devin-aebi-resume.pdf
 
 # Markdown
 markdown: kramdown
