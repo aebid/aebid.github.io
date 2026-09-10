@@ -14,6 +14,9 @@ What is CMS Service work.
 
 What it is, why it matters, and your contribution.
 
+**References.**
+- [Masters defense, "Alignment of the CMS Gas Electron Multiplier Detector" (July 2022)]({{ '/assets/pdf/devin-aebi-gem-alignment-defense.pdf' | relative_url }})
+
 ### GEM-CSC Integrated Trigger
 
 The GEM-CSC Integrated Trigger is the combination of hits from the new GEM detectors with the segments from the CSC detectors to build a single better trigger object in the CMS endcap.
