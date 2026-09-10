@@ -2,6 +2,8 @@
 title: Blog
 nav_order: 6
 permalink: /blog/
+# Hidden for now: not building the blog. Delete this line to bring it back.
+published: false
 ---
 
 # Blog
