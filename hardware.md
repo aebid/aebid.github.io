@@ -12,40 +12,55 @@ What is CMS Service work.
 
 ### GEM Alignment
 
-Alignment is the process of adjusting the detector geometry in software to match where the detectors physically sit.
-Nothing on the detector moves, the model of it does.
+The GEM subsystem is an upgrade and after a successful slice test in Run 2, the full GE1/1 system was installed during Long-Shutdown 2.
+All subsystems in CMS need to have a proper alignment so our measured positions match our expected positions for proper particle reconstruction, and as a new subsystem something needed to be developed for GEMs.
 
 **Why it was needed.**
 
-Every measured hit is compared against a software model of where the detector is supposed to be, so if that model is wrong then everything reconstructed from it is wrong.
-The effect shows up directly in physics objects, and a misaligned geometry noticeably degrades the reconstructed di-muon mass of Z candidates.
-Texas A&M is responsible for alignment of the CMS Muon System.
-The standard technique, track-based muon alignment, propagates a muon outward from the inner tracker and measures the residual between the propagated position and the measured hit position.
-That works well for absolute chamber positions, but the GEM-CSC bending angle depends on the position of GE1/1 relative to ME1/1 rather than on either absolute position.
-Propagating from the inner tracker also crosses a large amount of material, and the resulting multiple scattering is worst for exactly the low momentum muons that dominate the sample.
-The GEM subsystem needed an alignment method built around relative position instead.
+The CMS experiment's particle reconstruction relies on the idea that we know where the measured hits actually came from.
+If the detectors become misaligned we may see unphysical effects in the data from things that we know for certain.
+One example is the reconstructed di-muon mass of a Z decay.
+In a misaligned scenario the very sharp 91 GeV peak of a Z boson would be smeared or shifted purely due to failures in alignment and their effect on reconstruction.
+Texas A&M is responsible for alignment of the CMS Muon System, and this included the newly installed GEMs.
+The standard technique, track-based muon alignment, propagates a muon from the inner tracker to the desired chamber and measures the difference in positions between propagated and measured hits.
+This works well for absolute chamber positions, but the GEM-CSC system is motivated by having a precise relative position to properly measure the bending between chambers.
+This meant that the GEM subsystem needed a new alignment method built around the relative GEM-CSC position instead.
 
 **How it works.**
 
-Rather than propagating outward from the inner tracker, the ME1/1 CSC segment is back-propagated to the GEM layer.
-Far less material sits between those two detectors, so multiple scattering is much smaller, and the reference position becomes ME1/1 itself, which is the relative measurement the trigger actually depends on.
-GEM strips are radial rather than rectangular, so the residual has to be measured in ΔRφ rather than in Δx alone.
-Each GEM layer is then treated as a rigid body and three of its six degrees of freedom, δx, δy, and δφz, are fit using a MINUIT unbinned likelihood minimizer.
-The procedure iterates: select muons, measure residuals, fit alignment constants, write a new geometry, and repeat until the residuals converge.
-Layers are aligned individually rather than as SuperChambers, because cosmic data showed the two layers of a single SuperChamber can sit as much as 500 microns apart.
+I developed the GEM alignment by propagating CSC segments from ME1/1 backwards to the GEM chamber rather than the standard inner tracker outwards to GEM.
+This was motivated by two main components:
+First there is much less material between GEM and CSC than there is between the tracker and GEM, greatly reducing the effects of multiple scattering.
+Second the reference position becomes the ME1/1 chamber itself, mimicking the relative measurement the trigger system will eventually depend on.
+
+Since GEM strips are radial instead of rectangular, the residual was measured in ΔRφ rather than in Δx.
+Each GEM layer was treated as a rigid body with 6 degrees of freedom. Due to the topology of particles traveling through a single plane, the alignable degrees were only δx, δy, and δφz.
+This is because the other 3 degrees are weakly constrained by a point measurement.
+The 3 alignable degrees are fit using MINUIT in an unbinned likelihood minimizer.
+
+Overall procedure was:
+1. Select Muons
+2. Measure Residuals
+3. Fit Alignments
+4. Set Geometry and Repeat
 
 **My role.**
 
-I developed this alignment method and produced the first alignment of the GE1/1 system.
-I validated it first in simulation and then on three datasets with very different conditions: 2018 Slice Test collision data taken with four GE1/1 chambers installed during Run 2, 2021 CRUZET cosmic rays at zero magnetic field, and 2022 CRAFT cosmic rays at full field.
-The wide angular range of cosmic muons turned out to be the useful part, letting me constrain degrees of freedom that collision muons alone could not reach.
-[State the accuracy you reached here - your resume says 100 microns. It is the number that tells a reader whether the method worked, so it should not be left to the slides.]
+At the start of my Ph.D. there was no alignment plan in place for the GE1/1 system yet.
+I developed this method using simulation and 3 available datasets during the Long Shutdown 2:
+1. The 2018 Slice Test collision data that included four test GE1/1 chambers installed during Run 2.
+2. 2021 CRUZET cosmic ray muons at zero magnetic field.
+3. 2022 CRAFT cosmic ray muons at full field.
+
+Through these samples I was able to provide a first alignment for the full system before any collision data was taken with all chambers installed.
+From the start of Run 3 the GEM system has had a stable alignment plan.
 
 **Where it stands.**
 
-The alignment was ready for the start of Run 3 in 2022, and because it feeds CMS object reconstruction it benefits every analysis using muons rather than any single one.
-[The 2025 DP note carries a GE1/1 alignment result from p-p collision data, so this clearly did not stop in 2022 - one sentence on where it went would close the gap between the defense and now.]
-GE2/1 and ME0 are still to be installed, and both will need new algorithms of their own.
+Since Run 3 has started a new student has taken over the GEM Alignment responsibilities.
+The procedure is still running as the default GEM Alignment setup, and I have pushed to the next step of a working GEM-CSC system.
+After a reasonable alignment had been measured with collision data, we had the first look into the bending angle of the GEM-CSC system.
+This was a step closer to proper trigger integration.
 
 ### GEM-CSC Integrated Trigger
 
