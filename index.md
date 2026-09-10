@@ -19,6 +19,7 @@ I'm Devin, a Ph.D Candidate in High Energy Particle Physics at Texas A&M Univers
 
 ## Elsewhere
 
-- [GitHub](https://github.com/{{ site.author.github }})
+{% if site.author.cv %}- [CV / Resume (PDF)]({{ site.author.cv | relative_url }})
+{% endif %}- [GitHub](https://github.com/{{ site.author.github }})
 - [Email](mailto:{{ site.author.email }})
 - [LinkedIn](https://www.linkedin.com/in/{{ site.author.linkedin }})
